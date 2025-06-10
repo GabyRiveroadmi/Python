@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Buscar Cartera{% endblock %}
+{% block content %}
+<h2>Buscar Carteras</h2>
+<form method="get" action="/resultados/">{{ form.as_p }}<button type="submit">Buscar</button></form>
+{% endblock %}
