@@ -1,0 +1,14 @@
+{% extends 'myproyect/base.html' %}
+
+{% block title %}Carteras{% endblock %}
+
+{% block content %}
+<h2>Listado de Carteras</h2>
+<ul>
+  {% for cartera in carteras %}
+    <li>{{ cartera.nombre }} - Color: {{ cartera.color }} - Precio: ${{ cartera.precio }}</li>
+  {% empty %}
+    <li>No hay carteras disponibles.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'myproyect/base.html' %}
+
+{% block title %}Billeteras{% endblock %}
+
+{% block content %}
+<h2>Listado de Billeteras</h2>
+<ul>
+  {% for billetera in billeteras %}
+    <li>{{ billetera.nombre }} - Cuero: {{ billetera.cuero }} - Precio: ${{ billetera.precio }}</li>
+  {% empty %}
+    <li>No hay billeteras disponibles.</li>
+  {% endfor %}
+</ul>
+{% endblock %}

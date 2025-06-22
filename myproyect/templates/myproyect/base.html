@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+  <title>{% block title %}Accesorios Shop{% endblock %}</title>
+</head>
+<body>
+  <h1>Accesorios Shop</h1>
+  <nav>
+    <a href="{% url 'home' %}">Inicio</a> |
+    <a href="{% url 'lista_carteras' %}">Carteras</a> |
+    <a href="{% url 'lista_billeteras' %}">Billeteras</a> |
+    <a href="{% url 'lista_cintos' %}">Cintos</a> |
+    <a href="{% url 'about' %}">Sobre mí</a> |
+    {% if user.is_authenticated %}
+      <span>Hola, {{ user.username }}</span> |
+      <a href="{% url 'logout' %}">Cerrar sesión</a>
+    {% else %}
+      <a href="{% url 'login' %}">Login</a> |
+      <a href="{% url 'registro' %}">Registro</a>  
+    {% endif %}
+  </nav>
+  <hr>
+  {% block content %}{% endblock %}
+</body>
+</html>
