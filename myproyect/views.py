@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Cartera, Billetera, Cinto
 from .forms import CarteraForm, BilleteraForm, CintoForm
+from django.contrib.auth.forms import UserCreationForm
 
 # --- CARTERAS ---
 def lista_carteras(request):
@@ -82,7 +83,7 @@ def eliminar_cinto(request, pk):
 
 
 def home(request):
-    return render(request, 'myproyect/base.html')
+    return render(request, 'myproyect/index.html')
 
 def about(request):
     return render(request, 'myproyect/about.html')

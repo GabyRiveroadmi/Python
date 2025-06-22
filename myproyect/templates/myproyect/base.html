@@ -1,8 +1,66 @@
 <!DOCTYPE html>
-{% load static %}
 <html>
 <head>
   <title>{% block title %}Accesorios Shop{% endblock %}</title>
+  <style>
+    /* Fondo animado */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      background: linear-gradient(-45deg, #3a3a80, #6a88d9, #5d47c3, #9f6ee0);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    h1, nav, hr {
+      text-align: center;
+    }
+
+    nav {
+      margin: 20px 0;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    img {
+      display: block;
+      margin: auto;
+      max-width: 400px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    li {
+      padding: 5px 0;
+    }
+  </style>
 </head>
 <body>
   <h1>Accesorios Shop</h1>
@@ -14,13 +72,18 @@
     <a href="{% url 'about' %}">Sobre mí</a> |
     {% if user.is_authenticated %}
       <span>Hola, {{ user.username }}</span> |
-      <a href="{% url 'logout' %}">Cerrar sesión</a>
+      <form method="post" action="{% url 'logout' %}" style="display:inline;">
+        {% csrf_token %}
+        <button type="submit" style="background:none; border:none; color:#fff; cursor:pointer;">Cerrar sesión</button>
+      </form>
     {% else %}
       <a href="{% url 'login' %}">Login</a> |
-      <a href="{% url 'registro' %}">Registro</a>  
+      <a href="{% url 'registro' %}">Registro</a>
     {% endif %}
   </nav>
   <hr>
-  {% block content %}{% endblock %}
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
 </body>
 </html>

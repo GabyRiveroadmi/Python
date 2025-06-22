@@ -3,12 +3,14 @@
 {% block title %}Carteras{% endblock %}
 
 {% block content %}
-<h2>Listado de Carteras</h2>
-<ul>
-  {% for cartera in carteras %}
-    <li>{{ cartera.nombre }} - Color: {{ cartera.color }} - Precio: ${{ cartera.precio }}</li>
-  {% empty %}
-    <li>No hay carteras disponibles.</li>
-  {% endfor %}
-</ul>
+<div style="text-align: center; margin: 0 auto; max-width: 600px;">
+  <h2>Listado de Carteras</h2>
+  <ul style="list-style-position: inside; padding-left: 0; display: inline-block; text-align: left;">
+    {% for cartera in carteras %}
+      <li>{{ cartera.nombre }} - Color: {{ cartera.color }} - Precio: ${{ cartera.precio }}</li>
+    {% empty %}
+      <li>No hay carteras disponibles.</li>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock %}

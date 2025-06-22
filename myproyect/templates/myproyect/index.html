@@ -1,13 +1,12 @@
-{% extends 'base.html' %}
+{% extends 'myproyect/base.html' %}
+{% load static %}
 
 {% block title %}Inicio{% endblock %}
 
 {% block content %}
-  <h2 style="text-align: center;">Bienvenido a la tienda de accesorios</h2>
-  <p style="text-align: center;">Selecciona una opción del menú.</p>
+<h2 style="text-align:center;">Bienvenido a Accesorios Shop</h2>
+<p style="text-align:center;">Selecciona una opción del menú.</p>
 
-  <div style="text-align: center;">
-    <img src="{% static 'static/myproyect/img/home.jpeg' %}" alt="Accesorios Shop" style="max-width: 80%; height: auto; border-radius: 10px;">
-  </div>
+<img src="{% static 'myproyect/img/home.jpeg' %}" alt="Imagen inicio" style="display:block; margin:auto; max-width:400px;">
 {% endblock %}
 

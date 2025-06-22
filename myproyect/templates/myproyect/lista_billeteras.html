@@ -3,12 +3,14 @@
 {% block title %}Billeteras{% endblock %}
 
 {% block content %}
-<h2>Listado de Billeteras</h2>
-<ul>
-  {% for billetera in billeteras %}
-    <li>{{ billetera.nombre }} - Cuero: {{ billetera.cuero }} - Precio: ${{ billetera.precio }}</li>
-  {% empty %}
-    <li>No hay billeteras disponibles.</li>
-  {% endfor %}
-</ul>
+<div style="text-align: center; margin: 0 auto; max-width: 600px;">
+  <h2>Listado de Billeteras</h2>
+  <ul style="list-style-position: inside; padding-left: 0; display: inline-block; text-align: left;">
+    {% for billetera in billeteras %}
+      <li>{{ billetera.nombre }} - Cuero: {{ billetera.cuero }} - Precio: ${{ billetera.precio }}</li>
+    {% empty %}
+      <li>No hay billeteras disponibles.</li>
+    {% endfor %}
+  </ul>
+</div>
 {% endblock %}
