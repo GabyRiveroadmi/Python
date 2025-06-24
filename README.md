@@ -1,4 +1,4 @@
-# Accesorios Shop 👜🧢👛
+# Accesorios Shop 
 
 Este proyecto es una tienda web desarrollada con Django para la venta de accesorios como carteras, billeteras y cinturones.
 
@@ -6,7 +6,7 @@ Este proyecto es una tienda web desarrollada con Django para la venta de accesor
 
 - Registro e inicio de sesión de usuarios
 - Panel de administración con gestión completa de productos
-- Vistas públicas de productos: listado, detalle, creación, eliminación
+- Vistas públicas de productos
 - Página "About" con información de la creadora
 - Navegación fluida sin usar la barra del navegador
 
@@ -14,7 +14,7 @@ Este proyecto es una tienda web desarrollada con Django para la venta de accesor
 
 - Proyecto: `accesorios_shop`
 - App principal: `myproyect`
-- Modelos: `Cartera`, `Billetera`
+- Modelos: `Cartera`, `Billetera`, `Cinto`
 - Campos: texto, número, fecha
 - Vistas: CRUD completo sobre productos
 
